@@ -15,6 +15,7 @@ namespace Minigame.CS2D
         public Controller[] Team2;
         public List<Character> AllCharacters = new();
         public PlayerSetting playerSetting;
+        public KeyboardSetting keyboardSetting;
         public LayerMask layerWater;
         public LayerMask layerBullet;
         public Blood blood;

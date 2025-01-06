@@ -34,8 +34,9 @@ namespace Minigame.CS2D
         private StateAI stateAI = StateAI.FindGun;
         [SerializeField] private float maxDistanceToFindPlayer = 10f;
 
-        private void Start()
+        protected override void Start()
         {
+            base.Start();
             foreach (var item in character.team == 0 ? GameManager.Instance.Team2 : GameManager.Instance.Team1)
             {
                 targets.Add(item.transform);
@@ -113,11 +114,11 @@ namespace Minigame.CS2D
                 character.moverment.move = direction;
                 character.moverment.rotate = direction.normalized;
 
-                float rotateZ = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
-                if (Mathf.Abs(currentRotateZ - rotateZ) < 120)
-                {
-                    character.moverment.rotate = direction;
-                }
+                // float rotateZ = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
+                // if (Mathf.Abs(currentRotateZ - rotateZ) < 120)
+                // {
+                //     character.moverment.rotate = direction;
+                // }
 
                 StartCoroutine(HandleShoot());
             }
