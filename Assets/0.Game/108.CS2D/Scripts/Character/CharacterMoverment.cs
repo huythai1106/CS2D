@@ -36,12 +36,6 @@ namespace Minigame.CS2D
 
         private void CharacterRotation()
         {
-            // if (character.controller is AIController)
-            // {
-            //     RotateFollowVector(rotate);
-            //     return;
-            // }
-
             if (!ConditionRotate())
             {
                 isFreezeRotate = false;
@@ -102,7 +96,7 @@ namespace Minigame.CS2D
 
         private bool ConditionRotate()
         {
-            return Vector2.Distance(rotate, Vector2.zero) != 0;
+            return rotate != Vector2.zero;
         }
 
         private void CharacterMove()

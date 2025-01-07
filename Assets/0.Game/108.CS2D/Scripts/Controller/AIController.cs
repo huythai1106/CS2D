@@ -107,19 +107,15 @@ namespace Minigame.CS2D
                 currentWayPoint++;
             }
 
+            character.moverment.move = direction.normalized;
+            if (currentTarget)
+            {
+                character.moverment.rotate = (currentTarget.position - transform.position).normalized;
+            }
 
             if (!character.isDead)
             {
                 character.JoystickDown();
-                character.moverment.move = direction;
-                character.moverment.rotate = direction.normalized;
-
-                // float rotateZ = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
-                // if (Mathf.Abs(currentRotateZ - rotateZ) < 120)
-                // {
-                //     character.moverment.rotate = direction;
-                // }
-
                 StartCoroutine(HandleShoot());
             }
         }
@@ -127,13 +123,31 @@ namespace Minigame.CS2D
         private IEnumerator HandleShoot()
         {
             bool isShoot = false;
-            var characterTarget = currentTarget.GetComponent<Character>();
-
-            if (IsTargetInsideOfView(currentTarget) && characterTarget && !characterTarget.isDead && CheckRaycastTarget())
+            if (currentTarget.CompareTag("Player"))
             {
-                isShoot = true;
-                character.JoystickUp();
+                var characterTarget = currentTarget.GetComponent<Character>();
+
+                if (characterTarget && !characterTarget.isDead && CheckRaycastTarget())
+                {
+                    isShoot = true;
+                    character.JoystickUp();
+                }
+                else
+                {
+                    if (character.isShoot)
+                    {
+                        character.ButtonUpShoot();
+                    }
+                }
             }
+            else
+            {
+                if (character.isShoot)
+                {
+                    character.ButtonUpShoot();
+                }
+            }
+
             yield return new WaitForSeconds(timeDelayToShoot);
 
             // var positon = currentTarget.position;
@@ -143,10 +157,6 @@ namespace Minigame.CS2D
                 character.moverment.rotate = (currentTarget.position - transform.position).normalized;
                 character.ButtonDownShoot();
             }
-            else
-            {
-                character.ButtonUpShoot();
-            }
         }
 
         private bool CheckRaycastTarget()
@@ -154,7 +164,7 @@ namespace Minigame.CS2D
             if (!currentTarget) return false;
 
             RaycastHit2D hit = Physics2D.Raycast(character.pointGun.position, currentTarget.position - transform.position, 20, layerMask);
-            if (hit)
+            if (hit && hit.collider.CompareTag("Player"))
             {
                 var character1 = hit.collider.GetComponent<Character>();
                 if (character1 && character.team != character1.team)

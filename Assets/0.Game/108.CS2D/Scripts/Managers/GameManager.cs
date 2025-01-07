@@ -16,9 +16,9 @@ namespace Minigame.CS2D
         public List<Character> AllCharacters = new();
         public PlayerSetting playerSetting;
         public KeyboardSetting keyboardSetting;
-        public LayerMask layerWater;
-        public LayerMask layerBullet;
         public Blood blood;
+
+        public bool isHorizontal;
 
         public delegate void Callback(Character c);
 
@@ -41,11 +41,16 @@ namespace Minigame.CS2D
             Physics2D.IgnoreLayerCollision(7, 4, true);
 
             SetTeamCallback(c =>
-        {
-            AllCharacters.Add(c);
-        });
+            {
+                AllCharacters.Add(c);
+            });
 
             StartGame();
+
+            if (isHorizontal)
+            {
+                Screen.orientation = ScreenOrientation.LandscapeRight;
+            }
         }
 
         private void Start()
@@ -112,8 +117,8 @@ namespace Minigame.CS2D
             // Game2PlayerScoreControll.instances.SetScoreInGame(0, score1);
             // Game2PlayerScoreControll.instances.SetScoreInGame(1, score2);
 
-            if (score1 >= maxScore) { FinishGame(0); }
-            else if (score2 >= maxScore) { FinishGame(1); }
+            // if (score1 >= maxScore) { FinishGame(0); }
+            // else if (score2 >= maxScore) { FinishGame(1); }
         }
 
         public void FinishGame(int team)
