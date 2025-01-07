@@ -8,7 +8,7 @@ namespace Minigame.CS2D
     {
         public Character character;
 
-        private void Start()
+        protected virtual void Start()
         {
             character.controller = this;
         }
