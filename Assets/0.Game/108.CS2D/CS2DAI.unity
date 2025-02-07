@@ -299,6 +299,7 @@ MonoBehaviour:
   playerSetting: {fileID: 11400000, guid: 2a18fe9e4083b3d438f9e378895f3f87, type: 2}
   keyboardSetting: {fileID: 11400000, guid: 1b867a34b7c64014c9794f452751ba7c, type: 2}
   blood: {fileID: 2729434421089032867, guid: e7f34f9b5a926d243a1c8d8083dd5f36, type: 3}
+  isHorizontal: 0
   score1: 0
   score2: 0
   isModeCoop: 0
@@ -1541,7 +1542,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: e197bfdb5daa95141848920a40f2af95, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 2a7e5425b17c87f4881aa304d688f2e1, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
@@ -1840,14 +1841,13 @@ GameObject:
   - component: {fileID: 1353684814}
   - component: {fileID: 1353684813}
   - component: {fileID: 1353684816}
-  - component: {fileID: 1353684817}
   m_Layer: 0
   m_Name: Main Camera (1)
   m_TagString: MainCamera
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!81 &1353684813
 AudioListener:
   m_ObjectHideFlags: 0
@@ -1936,18 +1936,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   target: {fileID: 379196311}
   isFixedX: 0
---- !u!114 &1353684817
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1353684812}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a79441f348de89743a2939f4d699eac1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1358988157
 GameObject:
   m_ObjectHideFlags: 0
@@ -2921,7 +2909,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: d28b3f607537df3459e3cb05b0e02e1b, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 487e94e5c9af109469f95d3636f4285e, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
@@ -4332,7 +4320,6 @@ GameObject:
   - component: {fileID: 1960791524}
   - component: {fileID: 1960791523}
   - component: {fileID: 1960791526}
-  - component: {fileID: 1960791527}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -4378,7 +4365,7 @@ Camera:
     x: 0
     y: 0
     width: 1
-    height: 1
+    height: 0.5
   near clip plane: 0.3
   far clip plane: 1000
   field of view: 60
@@ -4428,18 +4415,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   target: {fileID: 1484377214}
   isFixedX: 0
---- !u!114 &1960791527
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1960791522}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a79441f348de89743a2939f4d699eac1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &2020947063 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 1705706299467225972, guid: 1a25d56ecc38d9d42b31dac2e161a107, type: 3}

@@ -38,7 +38,6 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0, g: 0, b: 0, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -374,13 +373,8 @@ MonoBehaviour:
   AllCharacters: []
   playerSetting: {fileID: 11400000, guid: 2a18fe9e4083b3d438f9e378895f3f87, type: 2}
   keyboardSetting: {fileID: 11400000, guid: 1b867a34b7c64014c9794f452751ba7c, type: 2}
-  layerWater:
-    serializedVersion: 2
-    m_Bits: 16
-  layerBullet:
-    serializedVersion: 2
-    m_Bits: 128
   blood: {fileID: 2729434421089032867, guid: e7f34f9b5a926d243a1c8d8083dd5f36, type: 3}
+  isHorizontal: 0
   score1: 0
   score2: 0
   isModeCoop: 0
@@ -1354,7 +1348,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: e197bfdb5daa95141848920a40f2af95, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 2a7e5425b17c87f4881aa304d688f2e1, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
@@ -2996,7 +2990,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: d28b3f607537df3459e3cb05b0e02e1b, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 487e94e5c9af109469f95d3636f4285e, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
